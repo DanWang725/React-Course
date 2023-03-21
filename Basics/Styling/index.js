@@ -1,25 +1,36 @@
-
-let createElement =  React.createElement
+let createElement = React.createElement
 
 let rootElement =
+  createElement('div', {}, 
+    createElement('h1', {}, "Contacts"),
     createElement('div', {},
-        createElement('h1',{}, "Contracts"),
-        createElement('ul', {},
-            createElement('li', {},
-                createElement(
-                    'a',
-                    {href: 'mailto:lol@cringe.com'},
-                    "Myron"
-                ),
-            ),
-            createElement('li', {},
-                createElement(
-                    'a',
-                    {href: 'mailto:me@cringe.com'},
-                    "Me"
-                ),
-            )
+      createElement(
+        'div',
+        {},
+        createElement('div', {}, "JN"),
+        createElement('span', {}, "James Nelson"),
+        createElement(
+          'a',
+          { href: 'mailto:james@frontarm.com' },
+          "james@frontarm.com",
+        ),
+        
+      ),
+      createElement(
+        'div',
+        {},
+        createElement('div', {}, "M"),
+        createElement('span', {}, "Me"),
+        createElement(
+          'a',
+          { href: 'mailto:me@example.com' },
+          "me@example.com"
         )
+      )
     )
+  )
+
+// The `ReactDOM` variable is set by the second `<script>` tag
+// in the above HTML file
 let domNode = document.getElementById('root')
 ReactDOM.render(rootElement, domNode)
