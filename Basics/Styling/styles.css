@@ -50,7 +50,12 @@ body {
   .ContactList-refresh:hover {
     background-color: #dd3c6f;
   }
-  
+  .Contact-link{
+    text-decoration: none;
+    color: inherit;
+    margin-top: 5px;
+    display: block;
+  }
   .Contact {
     border-bottom: 1px solid #f0f4fc;
     color: rgba(0, 0, 0, 0.73);

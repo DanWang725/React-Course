@@ -1,29 +1,29 @@
 let createElement = React.createElement
 
 let rootElement =
-  createElement('div', {}, 
-    createElement('h1', {}, "Contacts"),
+  createElement('div', {className:'ContactList'}, 
+    createElement('h1', {className: 'ContactList-title'}, "Contacts"),
     createElement('div', {},
       createElement(
         'div',
-        {},
-        createElement('div', {}, "JN"),
-        createElement('span', {}, "James Nelson"),
+        {className: 'Contact'},
+        createElement('div', {className:'Contact-avatar'}, "JN"),
+        createElement('span', {className:'Contact-name'}, "James Nelson"),
         createElement(
           'a',
-          { href: 'mailto:james@frontarm.com' },
+          { href: 'mailto:james@frontarm.com', className: 'Contact-link'},
           "james@frontarm.com",
         ),
         
       ),
       createElement(
         'div',
-        {},
-        createElement('div', {}, "M"),
-        createElement('span', {}, "Me"),
+        {className: 'Contact'},
+        createElement('div', {className:'Contact-avatar'}, "M"),
+        createElement('span', {className:'Contact-name'}, "Me"),
         createElement(
           'a',
-          { href: 'mailto:me@example.com' },
+          { href: 'mailto:me@example.com' , className:'Contact-link'},
           "me@example.com"
         )
       )
