@@ -8,11 +8,11 @@ let rootElement =
         'div',
         {className: 'Contact'},
         createElement('div', {className:'Contact-avatar'}, "JN"),
-        createElement('span', {className:'Contact-name'}, "James Nelson"),
+        createElement('span', {className:'Contact-name'}, "Myron Myron"),
         createElement(
           'a',
-          { href: 'mailto:james@frontarm.com', className: 'Contact-link'},
-          "james@frontarm.com",
+          { href: 'mailto:mladyjen@uoguelph.ca', className: 'Contact-link'},
+          "mladyjen@uoguelph.ca",
         ),
         
       ),

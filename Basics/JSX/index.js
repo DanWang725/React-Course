@@ -1,5 +1,3 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
 let createElement = React.createElement
 
 let rootElement = (
