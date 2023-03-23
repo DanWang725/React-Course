@@ -15,8 +15,8 @@ function getInitials({name, email}){
 }
 // Your React elements will go here.
 let elements = []
-billionaires.forEach(element => {
-  let contact = <div className='Contact'>
+billionaires.forEach((element, i) => {
+  let contact = <div className='Contact' key={i}>
       <div className='Contact-avatar'>
         {element.name.split(' ').map(s => s[0]).join('')}
       </div>
