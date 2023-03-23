@@ -6,6 +6,7 @@ let billionaires = [
   { name: 'Bill Gates', email: 'billg@microsoft.com' },
   { name: 'Jeff Bezos', email: 'jeff@amazon.com' },
   { name: 'Mark Zuckerberg', email: 'zuck@fb.com' },
+  { name: 'Myron Cringenko', email: 'mladyjen@uoguelph.ca'}
 ]
 function getInitials({name, email}){
   let final = '';
@@ -13,21 +14,19 @@ function getInitials({name, email}){
   return final;
 }
 // Your React elements will go here.
-let elements = [
-  billionaires.forEach(element => {
-    <div className='Contact'>
-      <div className='Contact-avatar'>{
-        (x = element.name) => {''.concat(x.split(' ').forEach(
-          str => {str.charAt(0)}
-          ))}
-      }</div>
+let elements = []
+billionaires.forEach(element => {
+  let contact = <div className='Contact'>
+      <div className='Contact-avatar'>
+        {element.name.split(' ').map(s => s[0]).join('')}
+      </div>
       <span className='Contact-name'>{element.name}</span>
       <a href={element.email}>
         {element.email}
       </a>
     </div>
-  })
-]
+  elements.push(contact)
+})
 
 // Use a for loop or array.map to build the elements array
 
