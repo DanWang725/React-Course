@@ -1,23 +1,37 @@
-let createElement = React.createElement
+/*import React from 'react'
+import ReactDOM from 'react-dom'
+import './styles.css'*/ //not needed for preview
 
-let rootElement = (
-  <div className='ContactList'>
-    <h1 className='ContactList-title'>Contacts</h1>
-    <div>
-      <div className='Contact'>
-        <div className='Contact-avatar'>JN</div>
-        <span className='Contact-name'>Myron Myron</span>
-        <a href='mailto:mladyjen@uoguleph.ca' className='Contact-link'>mladyjen@uoguelph.ca</a>
-      </div>
-      <div className='Contact'>
-        <div className='Contact-avatar'>DW</div>
-        <span className='Contact-name'>Myron Myron</span>
-        <a href='mailto:dwang11@uoguleph.ca' className='Contact-link'>dwang11@uoguelph.ca</a>
-      </div>
+let billionaires = [
+  { name: 'Bill Gates', email: 'billg@microsoft.com' },
+  { name: 'Jeff Bezos', email: 'jeff@amazon.com' },
+  { name: 'Mark Zuckerberg', email: 'zuck@fb.com' },
+]
+function getInitials({name, email}){
+  let final = '';
+  final.concat(name.split(' ').forEach(part =>{part.charAt(0)}));
+  return final;
+}
+// Your React elements will go here.
+let elements = [
+  billionaires.forEach(element => {
+    <div className='Contact'>
+      <div className='Contact-avatar'>{
+        (x = element.name) => {''.concat(x.split(' ').forEach(
+          str => {str.charAt(0)}
+          ))}
+      }</div>
+      <span className='Contact-name'>{element.name}</span>
+      <a href={element.email}>
+        {element.email}
+      </a>
     </div>
-  </div>
-)
+  })
+]
 
-// The `ReactDOM` variable is set by the second `<script>` tag
-// in the above HTML file
-ReactDOM.render(rootElement, document.getElementById('root'))
+// Use a for loop or array.map to build the elements array
+
+ReactDOM.render(
+  <div className='ContactList'>{elements}</div>,
+  document.getElementById('root')
+)
